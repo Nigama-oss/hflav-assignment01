@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B to charm</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet" />
+    <link href="assets/bootstrap-table.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/extensions/bootstrap-table-filter-control.min.css"/>
+</head>
+<body>
+    <header>
+        <div class="p-5 text-center bg-light">
+            <h1 class="mb-3">HFLAV B to Charm</h1>
+            <h4 class="mb-3">Assignment 01</h4>
+        </div>
+    </header>
+    <div class="container mt-2 mb-2">
+        <div>
+            <button id="add" class="btn btn-primary">Add New</button>
+            <button id="remove" class="btn btn-danger">Remove</button>
+            <button id="removeall" class="btn btn-danger">Remove All</button>
+        </div>
+        <table
+                id="table"
+                data-toggle="table"
+                data-pagination="true"
+                data-search="true"
+                data-search-align="left"
+                data-show-toggle="true"
+                data-detail-formatter="detailFormatter"
+                data-show-refresh="true"
+                data-detail-view="true"
+                data-show-fullscreen="true"
+                data-show-pagination-switch="true"
+                data-pagination-pre-text="Previous"
+                data-pagination-next-text="Next"
+                data-pagination-h-align="left"
+                data-pagination-detail-h-align="right"
+                data-page-list="[10, 20, All]"
+                data-toolbar="#toolbar"
+                data-advanced-search="true"
+                data-id-table="advancedTable"
+                data-filter-control="true"
+                data-filter-show-clear="true"
+                data-show-print="true"
+                data-click-to-select="true">
+            <thead>
+                <tr>
+                    
+                    <th data-field="parameters" data-sortable="false" data-align="center" colspan="6">Parameters</th>
+                    <th data-field="measurements" data-sortable="true" colspan="2" data-align="center">Measurements</th>
+                </tr>
+                <tr>
+                    <th data-field="state" data-checkbox="true"></th>
+                    <th data-field="index" data-align="center">Index</th>
+                    <th data-field="decay_particles" data-align="center" data-filter-control="select">Decay Particle</th>
+                    <th data-field="average" data-align="center" data-filter-control="input">Average</th>
+                    <th data-field="total_error" data-align="center" data-filter-control="input">Total Error</th>
+                    <th data-field="formula" data-align="center" data-filter-control="input">Formula</th>
+                    <th data-field="values" data-align="center" data-filter-control="input">Values</th>
+                    <th data-field="errors" data-align="center" data-filter-control="input">Errors</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>1</td>
+                    <td>Bbaryon/D</td>
+                    <td>0.0806</td>
+                    <td>0.004188078318274384</td>
+                    <td>B ( Λ_b^0 →J/ψp K^- )</td>
+                    <td>0.0806</td>
+                    <td>0.0054580216195980755</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>2</td>
+                    <td>Bbaryon/D</td>
+                    <td>0.44000000000000006</td>
+                    <td>0.10816653826370884</td>
+                    <td>B ( Λ_b^0 →ψ(2S) Λ)/B ( Λ_b^0 →J/ψΛ)</td>
+                    <td>0.44</td>
+                    <td>0.1236931687685298</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>3</td>
+                    <td>Bbaryon/cc</td>
+                    <td>1.02</td>
+                    <td>0.11419055689206256</td>
+                    <td>B ( Λ_b^0 →Λ_c^+ π^+ π^- π^- )</td>
+                    <td>1.02</td>
+                    <td>0.11532562594670798</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>4</td>
+                    <td>Bbaryon/cc</td>
+                    <td>0.0031709338399558886</td>
+                    <td>0.00037417283861918883</td>
+                    <td>f_Ξ_b^-/f_Λ_b^0 ×B ( Ξ_b^- →Λ_b^0π^-)</td>
+                    <td>0.00317</td>
+                    <td>0.0005288572943196896</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>5</td>
+                    <td>Bbaryon/cc</td>
+                    <td>0.000601</td>
+                    <td>8.802272433866154e-05</td>
+                    <td>B ( Λ_b^0 →Λ_c^+ π^- )/B ( B̅^0 →D^+ π^- )</td>
+                    <td>0.000601</td>
+                    <td>0.00010906878563548782</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>6</td>
+                    <td>Bbaryon/cc</td>
+                    <td>0.045</td>
+                    <td>0.015054881378903566</td>
+                    <td>B ( Λ_b^0 →Λ_c^+ π^- )</td>
+                    <td>0.045</td>
+                    <td>0.015591486014295261</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>7</td>
+                    <td>Bbaryon/cc</td>
+                    <td>2.086</td>
+                    <td>0.16483931569787766</td>
+                    <td>B ( Λ_b^0 →Λ_c^+ D^- )  / B ( Λ_b^0 →Λ_c^+ D_s^- )</td>
+                    <td>2.086</td>
+                    <td>0.2124335190124195</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>8</td>
+                    <td>Bbaryon/cc</td>
+                    <td>0.0824</td>
+                    <td>0.004887739763939976</td>
+                    <td>B ( Λ_b^0 →π^- P_c(4450)^+ ) / B ( Λ_b^0 →K^- P_c(4450)^+ ) </td>
+                    <td>0.0824</td>
+                    <td>0.006444377394287208</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>9</td>
+                    <td>Bd/D</td>
+                    <td>0.0006000249283655893</td>
+                    <td>0.00019849447144443326</td>
+                    <td>δ_∥ ( B →ψ(2S) K^* )</td>
+                    <td>0.0006</td>
+                    <td>0.0003321144381083123</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>10</td>
+                    <td>Bd/D</td>
+                    <td>0.5900000000000001</td>
+                    <td>0.12083045973546655</td>
+                    <td>B ( B̅^0 →D^0 η^'(958) )</td>
+                    <td>0.5900000000000001</td>
+                    <td>0.13076696830622023</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>11</td>
+                    <td>Bd/D</td>
+                    <td>0.99</td>
+                    <td>0.13601470508675836</td>
+                    <td>}B ( B̅^0 →D^0 π^+ π^- )</td>
+                    <td>0.99</td>
+                    <td>0.157797338380595</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>12</td>
+                    <td>Bc/DD</td>
+                    <td>0.003</td>
+                    <td>0.0036999999999999997</td>
+                    <td>B ( B̅^0 →D_1(2420)^+ π^- )×B ( D_1(2420)^+ →D^+ π^- π^+ )</td>
+                    <td>0.003</td>
+                    <td>0.0037</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>13</td>
+                    <td>Bs/D</td>
+                    <td>0.0027986783981361796</td>
+                    <td>0.0010435525172583582</td>
+                    <td>B ( B̅^0 →D̅^0 K̅^*(892)^0 )</td>
+                    <td>0.0028</td>
+                    <td>0.0011045361017187263</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>14</td>
+                    <td>Bs/DD</td>
+                    <td>0.019</td>
+                    <td>0.004242640687119286</td>
+                    <td>B ( B̅^0 →D_s^- a_2(1320)^+ )</td>
+                    <td>0.019</td>
+                    <td>0.005196152422706632</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>15</td>
+                    <td>Bu/D</td>
+                    <td>0.015300000000000001</td>
+                    <td>0.004244997055358225</td>
+                    <td>B ( B̅^0 →D_s^- D^+ )×B ( D_s^- →ϕ(1020) π^- )</td>
+                    <td>0.015300000000000001</td>
+                    <td>0.005141011573610781</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap-table.min.js"></script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax?config=Tex-MML-AM_CHTML"></script>
+    <script src="assets/extensions/toolbar/bootstrap-table-toolbar.min.js"></script>
+    <script src="assets/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+    <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+    <script src="https://unpkg.com/tableexport.jquery.plugin/libs/jsPDF/jspdf.min.js"></script>
+    <script src="https://unpkg.com/tableexport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+    <script src="assets/extensions/print/bootstrap-table-print.min.js"></script>
+    <script src="assets/extensions/export/bootstrap-table-export.min.js"></script>
+    <script>
+        function detailFormatter(index, row) {
+            var html = []
+            $.each(row, function(key, value) {
+                html.push('<p class="row" style="width:100%"><b class="col-md-2">' + key + '</b><span class="col-md-10">: '+ value+'</span></p>')
+            })
+            return html.join('')
+        }
+    </script>
+    <script>
+        var table = $('#table')
+
+        $('#add').on('click', function() {
+            var randomId = 100 + ~~(Math.random() * 100)
+            table.bootstrapTable('insertRow', {
+                index: 0,
+                row: {
+                    id: randomId,
+                    index: 'Index'+ randomId,
+                    decay_particles: 'Decay Particles' + randomId,
+                    average: 'Average' + randomId,
+                    total_error: 'Total Error' + randomId,
+                    formula: 'Formula' + randomId,
+                    values: 'Values' + randomId,
+                    errors: 'Errors' + randomId
+                }
+            })
+        })
+        $('#remove').on('click', function(){
+            var ids = $.map(table.bootstrapTable('getSelections'), function(row){
+                return row.id
+            })
+            table.bootstrapTable('remove', {
+                field: 'id',
+                values: ids
+            })
+        })
+        $('#removeall').on('click', function() {
+            table.bootstrapTable('removeAll')
+        })
+    </script>
+</body>
+
+</html>
